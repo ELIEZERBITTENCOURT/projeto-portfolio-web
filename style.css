@@ -16,6 +16,10 @@
     --font-action: "Mulish", sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .hamburguer{
     /*background-color: red;*/
     width: 2rem;
@@ -180,6 +184,7 @@ header{
     top: 0;
     right: -20rem;
     transition: all 1s;
+    z-index: 90;
 }
 
 .show-menu .sidebar{
@@ -191,6 +196,7 @@ header{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 150;
 }
 
 .menu-item{
@@ -572,4 +578,57 @@ header{
     padding: 1rem;
     cursor: pointer;
     grid-column: 2;
+}
+
+/************RODAPÉ*******************/
+
+footer{
+    width: 100%;
+    height: 3rem;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content p{
+    font-family: var(--font-secundary);
+    color: #D7DDE8;
+    font-size: 1.2rem;
+}
+
+.social-list a{
+    margin: 0 1.5rem;
+    color: #D7DDE8;
+    font-size: 2;
+}
+
+.social-list ul{
+    display: flex;
+
+}
+
+/*******LINK PARA O TOPO*********/
+#link-topo{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.1rem 0.6rem #555;
+    background: #757F9A; 
+    background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A); 
+    background: linear-gradient(to left, #D7DDE8, #757F9A);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+
 }
