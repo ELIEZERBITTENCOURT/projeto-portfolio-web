@@ -3,6 +3,7 @@
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 
+/*****BODY*****/
 *{
     margin: 0;
     padding: 0;
@@ -20,75 +21,90 @@ html{
     scroll-behavior: smooth;
 }
 
-.hamburguer{
-    /*background-color: red;*/
-    width: 2rem;
-    height: 2rem;
-    position: fixed;
-    z-index: 100;
-    right: 2rem;
-    top: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+/*********ÍCONE DE MENU*************/
+#menu{
+    width: 30px;
+    height: 30px;
+    margin: 30px 0 20px 20px;
     cursor: pointer;
 }
-
-.show-menu .hamburguer{
-    right: 16rem;
-}
-
-.line{
+.bar{
+    height: 5px;
     width: 100%;
-    height: .1rem;
-    background-color: #fff;
-    box-shadow: 0.1rem 0.1rem 1px black;
-    transition: transform 1s;
-
+    background-color: rgb(252, 74, 74);
+    display:block;
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
 
-.show-menu #line1{
-    transform: rotate(45deg) translate(.3rem, .4rem);
+#bar1{
+    transform: translateY(-4px);
 }
-
-
-.show-menu #line2{
-    opacity: 0;
-    visibility: hidden;
+#bar3{
+    transform: translateY(4px);
 }
-
-.show-menu #line3{
-    transform: rotate(-45deg) translate(.3rem, -.4rem);
-}
-
-.hamburguer span{
-    position: absolute;
-    left: 3rem;
-    height:  2rem;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #a044ff;
-    color: #fff;
+.nav li a{
+    color: rgb(245, 241, 241);
+    text-decoration: none;
     font-family: var(--font-action);
-    opacity: 0;
+}
+.nav li a:hover{
+    font-weight: bold;
 }
 
-.hamburguer span::before{
-    content:"";
-    position:absolute;
-    border-right: .5rem solid #a044ff;
-    border-top: .5rem solid transparent;
-    border-left: .5rem solid transparent;
-    border-bottom: .5rem solid transparent;
-    left: -1rem;
+.nav li{
+    list-style: none;
+    padding: 16px 0;
+}
+.nav{
+    padding: 0;
+    margin: 0 20px;
+    transition: 0.3s ease;
+    display: none;
 }
 
-.show-menu .hamburguer:hover span{
-    opacity: 1;
+.menu-bg, #menu-bar{
+    top: 0;
+    left: 0;
+    position: absolute;
+
+}
+.menu-bg{
+    z-index:1;
+    width: 0;
+    height: 0;
+    margin: 30px 0 20px 20px;
+    background: radial-gradient(circle, #e94498, #b81568);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+#menu-bar{
+    z-index:2;
+}
+.change-bg{
+    width: 550px;
+    height: 540px;
+    transform: translate(-60%, -30%);
+}
+.change .bar{
+    background-color: #eee;
 }
 
+.change #bar1{
+    transform: translateY(4px) rotate(-45deg);
+}
+
+.change #bar3{
+    transform: translateY(-6px) rotate(45deg);
+}
+.change #bar2{
+    opacity:0;
+}
+.change{
+    display: block;
+}
+
+/**********HEADER**************/
 header{
     width: 100%;
     height: 100vh;
@@ -128,7 +144,7 @@ header{
     font-size: 3.5rem;
     font-family: var(--font-primary);
     font-weight: 200;
-    text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
+    text-shadow: 0.3rem 0.4rem 2px rgba(0, 0, 0, .4);
     line-height: 3.5rem;
     margin-bottom: 2rem;
     opacity: 0;
@@ -145,14 +161,13 @@ header{
 }
 .banner button{
     font-family: var(--font-action);
-    font-size: 1.2rem;    
     color: rgb(17, 16, 16);
     text-transform: uppercase;
     letter-spacing: .1rem;
     background: #757F9A; 
     background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A); 
     background: linear-gradient(to left, #D7DDE8, #757F9A);
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -175,77 +190,14 @@ header{
     }
 
 }
-
-.sidebar{
-    width: 20rem;
-    height: 100vh;
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    right: -20rem;
-    transition: all 1s;
-    z-index: 90;
-}
-
-.show-menu .sidebar{
-    right: 0;
-}
-
-.menu{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 150;
-}
-
-.menu-item{
-    text-align: center;
-    margin: .5rem;
-}
-
-.menu-link{
-    font-family: var(--font-action);
-    font-size: 2rem;
-    color: #555;
-    transition: color 1s;
-}
-.menu-link:hover{
-    color:#a98ac0
-}
-
-.social-media{
-   
-    position: absolute;
-    bottom: 2rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-
-}
-
-.social-media i{
-    background-color: #6a3093;
-    color: rgba(255, 255, 255, 1);
-    height: 2.5rem;
-    width: 2.5rem;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    transition: background-color 1s;
-}
-
-.social-media i:hover{
-    background-color: #a044ff;
-}
+/**********SESSÃO CONHECIMENTO**************/
 
 .conhecimentos{
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(16,1fr);
+    grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(6, 6rem);
-    row-gap: .5rem;
+    row-gap: 0.5rem;
 }
 
 .conhecimento:nth-child(1){
@@ -277,6 +229,11 @@ header{
     grid-row: 5/ -1;
 }
 
+.sessao-conhecimentos{
+    background-color: #ffffff;
+    height: 100%;
+}
+
 .sessao-header{
     display: flex;
     align-items: center;
@@ -285,7 +242,7 @@ header{
 
 .sessao-header h1{
     font-family: var(--font-primary);
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #686163;
     border-bottom: solid 3px #6a3093;
     margin-bottom: 1.5rem ;
@@ -322,11 +279,11 @@ header{
     object-fit: cover;
     width: 100%;
 }
-
+/**********SESSÃO PROJETOS**************/
 .projetos{
     display: flex;
     justify-content: space-evenly;
-
+    margin-bottom: 2rem;
 }
 
 .card{
@@ -339,21 +296,21 @@ header{
     width: 100%;
     height: 100%;
     background-color: #262626;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
 
 .card-img-wrapper img{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: .5rem;
-    opacity: 9;
-    transition: opacity .3s;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
 
 }
 
 .card:hover .card-img-wrapper img{
-    opacity: .5;
+    opacity: 0.5;
 
 }
 
@@ -363,14 +320,14 @@ header{
     position: absolute;
     bottom: 0;
     padding: 2rem;
-    text-shadow: 0.3rem 0.1rem 0.6rem rgba(0, 0, 0, 0.6);
+    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.6);
     transition: all .3s;
 }
 
 .card-info h2{
     font-family: var(--font-primary);
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
     color: rgb(189, 178, 178)
     
 }
@@ -387,7 +344,7 @@ header{
     font-weight: 400;
     color: #eee;
     width: 80%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .btn{
@@ -397,9 +354,9 @@ header{
     font-family: var(--font-action);
     font-size: 1rem;
     color: #eee;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     border: none;
-    box-shadow: 0 .1rem .8rem rgba(0, 0, 0, .4);
+    box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, .4);
 }
 
 .card-info button{
@@ -413,8 +370,8 @@ header{
     visibility: visible;
 }
 
+/**********SESSÃO CONTATO**************/
 .sessao-contato{
-    text-align: center;
     width: 100%;
     height: 100vh;
     background-color: #262626;
@@ -427,13 +384,12 @@ header{
     width: 60%;
     height: 30rem;
     display: flex;
-    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
 }
 
 .contato-left{
-    width: 30%;
-    background: 
-        linear-gradient(rgba(202, 124, 124, 0.6), rgba(43, 41, 41, 0.9)),
+    width: 35%;
+    background: linear-gradient(rgba(202, 124, 124, 0.6), rgba(43, 41, 41, 0.9)),
         url(imagens/contato.jpg);
     background-size: cover;
     
@@ -448,6 +404,7 @@ header{
 
 .sessao-contato h1{
     width: 100%;
+    text-align: center;
     font-family: var(--font-primary);
     color:#262626;
     font-size: 3rem;
@@ -477,7 +434,7 @@ header{
     width: 20rem;
     font-size: 1.5rem;
     font-family: var(--font-secundary);
-    border-bottom: 1px dashed #636363;
+    border-bottom: 2px dashed #636363;
     height: 3rem;
     outline: none;
     margin: 2rem 0;
@@ -487,7 +444,7 @@ header{
     position:absolute;
     left: 0;
     top: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: var(--font-secundary);
     text-transform: uppercase;
     transition: all 0.3s;
@@ -495,7 +452,7 @@ header{
 
 .field:focus ~ label{
     top: 0;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 .field:focus{
@@ -505,15 +462,20 @@ header{
 .btn-submit{
     font-size: 1.2rem;
     text-transform: uppercase;
-    width: 68%;
+    width: 65%;
     height: 1.5rem;
     margin-top: 1rem;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    text-shadow: 0 0.1rem 0.3rem rgba(189, 178, 178);
+    box-shadow: 0 0.1rem 0.3rem rgba(51, 60, 61,0.9);
 }
 
 .preenchido{
     pointer-events: none;
 }
 
+/**********SESSÃO ORÇAMENTO**************/
 .sessao-orcamento{
     width: 100%;
     height: 100vh;
@@ -535,15 +497,15 @@ header{
 
 .sessao-orcamento h1{
     position: absolute;
-    top: -2rem;
-    left: 9rem;
+    top: -2.5rem;
+    left: 2rem;
     background: #757F9A; 
     background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A); 
     background: linear-gradient(to left, #D7DDE8, #757F9A);
-    padding: 0 5rem;
+    padding: 0 3rem;
     color:#fff;
     font-family: var(--font-primary);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: lighter;
     box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -560,7 +522,6 @@ header{
 .sessao-orcamento label{
     font-family: var(--font-secundary);
     font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .sessao-orcamento input[type="number"]{
@@ -570,7 +531,7 @@ header{
     outline: none;
     border-radius: 10px;
     border: none;
-    padding: .5rem;
+    padding: .3rem;
 }
 
 .btn-orcamento{
@@ -584,7 +545,7 @@ header{
 
 footer{
     width: 100%;
-    height: 3rem;
+    height: 7rem;
     background-color: #262626;
     display: flex;
     justify-content: center;

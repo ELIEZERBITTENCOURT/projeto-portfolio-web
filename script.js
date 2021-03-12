@@ -1,4 +1,5 @@
-document.querySelector(".hamburguer").addEventListener("click", function(){
+
+document.querySelector("#menu-bar").addEventListener("click", function(){
     document.querySelector(".container").classList.toggle("show-menu");
 });
 
@@ -27,6 +28,12 @@ function atualizarPreco(){
     preco *= 1 + taxaUrgencia
 
     document.querySelector("#preco").innerHTML = `R$ ${preco.toFixed(2)}`
+}
+
+function onClickMenu(){
+    document.getElementById("menu").classList.toggle("change");
+    document.getElementById("nav").classList.toggle("change");
+    document.getElementById("menu-bg").classList.toggle("change");
 }
 
 

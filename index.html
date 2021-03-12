@@ -13,15 +13,28 @@
 </head>
 
 <body>
-    <div class="container">
+<!-------------------------------------------------MENU-------------------------------------------------->
+    
+        <div id="menu-bar">
+            <div id="menu" onclick="onClickMenu()">
+                <div class="bar" id="bar1"></div>
+                <div class="bar" id="bar2"></div>
+                <div class="bar" id="bar3"></div>
 
-        <div class="hamburguer">
-            <div class="line" id="line1"></div>
-            <div class="line" id="line2"></div>
-            <div class="line" id="line3"></div>
-            <span>fechar</span>
+            </div>
+                
+        
+            <ul class="nav" id="nav">
+                    <li><a href="#" >Home</a></li>
+                    <li><a href="#conhecimento" >Conhecimento</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#orcamento">Orçamento</a></li>
+            </ul>        
         </div>
-
+        <div class="menu-bg" id="menu-bg"></div>
+<!--------------------------------------------------HEADER--------------------------------------------->
+        <div class="container">
         <header id="home">
             <div class="img-wrapper">
                 <img src="imagens/img_bg.jpg" alt="">
@@ -33,25 +46,7 @@
             </div>
 
         </header>
-
-        <aside class="sidebar">
-            <nav>
-                <ul class="menu">
-                    <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
-                    <li class="menu-item"><a href="#conhecimento" class="menu-link">Conhecimento</a></li>
-                    <li class="menu-item"><a href="#projetos" class="menu-link">Projetos</a></li>
-                    <li class="menu-item"><a href="#contato" class="menu-link">Contato</a></li>
-                    <li class="menu-item"><a href="#orcamento" class="menu-link">Orçamento</a></li>
-                </ul>
-            </nav>
-
-            <div class="social-media">
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-github"></i></a>
-                <a href=""><i class="fab fa-linkedin-in"></i></a>
-            </div>
-
-        </aside>
+<!--------------------------------------------SESSÃO CONHECIMENTO-------------------------------------------------->
         <section class="sessao-conhecimentos" id="conhecimento">
             <div class="sessao-header">
                 <h1>Conhecimentos</h1>
@@ -127,7 +122,7 @@
                 </div>
             </div>
         </section>
-
+<!--------------------------------------------SESSÃO PROJETOS-------------------------------------------------->
         <section class="sessao-projetos" id="projetos">
             <div class="sessao-header">
                 <h1>Projetos</h1>
@@ -176,7 +171,7 @@
             </div>
 
         </section>
-           
+<!--------------------------------------------SESSÃO PROJETOS-------------------------------------------------->          
         <section class="sessao-contato" id="contato">
             <div class="contato-wrapper">
                 <div class="contato-left">
@@ -202,7 +197,7 @@
                 </div>
             </div>
         </section>
-
+<!--------------------------------------------SESSÃO ORÇAMENTO-------------------------------------------------->
         <section class="sessao-orcamento" id="orcamento">
             <div class="orcamento-wrapper">
                 <h1> Faça um orçamento</h1>
@@ -222,14 +217,14 @@
                             <label for="layout-nao">Já tenho um layout</label>
                         </div>
                     </div>
-                    <label for="prazo">Prazo:</label>
+                    <label for="prazo">Prazo</label>
                     <input type="range" name="prazo" id="prazo" min="1" max="10">
                     <label id="preco">R$ 0,00</label>
                     <button class="btn btn-orcamento" type="submit">Enviar</button>
                 </form>
             </div>
         </section>
-        
+<!--------------------------------------------SESSÃO RODAPÉ-------------------------------------------------->      
         <footer>
             <div class="footer-content">
                 <p>
@@ -247,9 +242,8 @@
         <a href="#home" id="link-topo">
             <i class="fas fa-arrow-up"></i>
         </a>
-    </div>
-
+    
 </body>
-
+<!--------------------------------------------SCRIPTS-------------------------------------------------->
 <script src="script.js"></script>
 </html>
